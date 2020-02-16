@@ -4,7 +4,7 @@
   font-style: normal;
 
   src: url("../fonts/quattrocento-sans-v12-latin-regular.woff2") format("woff2"),
-    url("../fonts/quattrocento-sans-v12-latin-regular.woff") format("woff");
+  url("../fonts/quattrocento-sans-v12-latin-regular.woff") format("woff");
 }
 
 @font-face {
@@ -13,7 +13,7 @@
   font-style: normal;
 
   src: url("../fonts/quattrocento-sans-v12-latin-700.woff2") format("woff2"),
-    url("../fonts/quattrocento-sans-v12-latin-700.woff") format("woff");
+  url("../fonts/quattrocento-sans-v12-latin-700.woff") format("woff");
 }
 
 @font-face {
@@ -22,7 +22,7 @@
   font-style: normal;
 
   src: url("../fonts/Vani.woff2") format("woff2"),
-    url("../fonts/Vani.woff") format("woff");
+  url("../fonts/Vani.woff") format("woff");
 }
 
 /* globals */
@@ -311,22 +311,25 @@ a {
 }
 
 .slider__btn {
-  display: block;
+  display: inline-block;
+  margin-top: 35px;
+  padding: 15px 20px;
 
   font-weight: 400;
   font-size: 30px;
   line-height: 1.5;
-
-  /* !---------- FIX FONT ------------ */
-  font-family: "Arial", sans-serif;
-  /* !------------------------------- */
-
+  font-family: "Quattrocento Sans", "Arial", sans-serif;
   color: #ffffff;
   letter-spacing: 0.025em;
 
   border: 2px solid #985336;
 }
-
+.slider__btn:focus,
+.slider__btn:hover{
+  background-color: #985336;
+}
+.slider__btn:active;
+opasity: 0.7;
 .section-title {
   font-weight: bold;
   font-size: 36px;
@@ -335,7 +338,13 @@ a {
   color: #212121;
   letter-spacing: 1px;
 }
+.slider__btn-round:active::before {
+opacity: 0.7;
+}
 
+slider__input:checked ~ .slider__btn-round {
+  border-color: red;
+}
 .section-title--white {
   color: #ffffff;
 }
@@ -424,7 +433,7 @@ a {
 
   background-color: #000000;
   background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url("../img/bg-2.jpg");
+  url("../img/bg-2.jpg");
 }
 
 .statistics__list {
@@ -438,10 +447,28 @@ a {
   list-style: none;
 }
 
+about__list {
+  list-style: none;
+  marging:0;
+  padding:0;
+  displey: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+about__item {
+  width: 360px;
+  background-color: #e8e6e6;
+}
 .statistics__item {
   width: 260px;
 }
 
+
+.about__title::after {
+  content: "";
+  position: absolute;
+}
 .statistics__price {
   margin: 0;
 
